@@ -1,0 +1,30 @@
+<Tab>:
+
+    MDLabel:
+        id: label
+        text: "Tab 0"
+        halign: "center"
+
+
+
+BoxLayout :
+    orientation : "vertical"
+    MDToolbar :
+        title : "WhatsApp"
+        right_action_items : [['magnify' , lambda x : print("magnify")] , ['chat' , lambda x : print("chat") ], ['dots-vertical' , lambda x : print("dots-vertical")]]
+
+
+    MDTabs:
+        id: tabs
+        on_tab_switch: app.on_tab_switch(*args)
+        Tab :
+            text : "Calls"
+        Tab :
+            text : "Chat"
+            ScrollView:
+                MDList :
+                    id : list
+
+        Tab :
+            text : "Contacts"
+            Button :
